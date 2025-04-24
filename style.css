@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+  }
+  
+  /* --- Navbar --- */
+  .nav-bar {
+    background: #333;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+    color: #0077cc;
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  /* --- Hero Section --- */
+  header {
+    background: url('./img.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+  header h1,
+  header p {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* --- Page Sections --- */
+  section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  section h2 {
+    margin-bottom: 20px;
+    color: #0077cc;
+  }
+  
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background: #dadada;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .card:hover{
+    background-color:#80b6dc;
+    cursor: pointer;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  /* --- Buttons --- */
+  #about button,
+  .contact-form button {
+    background: #0077cc;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #about button {
+    margin-top: 20px;
+  }
+  
+  #about button:hover {
+    background: #005fa3;
+    transform: translateY(-2px);
+  }
+  
+  /* --- Footer --- */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: #333;
+      width: 100%;
+      padding: 20px;
+    }
+  
+    #menu-toggle:checked + .menu-icon + .nav-links {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin-bottom: 20px;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    header h1 {
+      font-size: 2em;
+    }
+  
+    .services {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
